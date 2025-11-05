@@ -1,4 +1,4 @@
-[200~Git commands:
+GIT commands:
 Yum intall git -y: inatall the git in the putty(yum = Yellowdog Updater Modifier It is used to update, install or uninstall the packages)
  Git: this will show that is git installed or not in your linux os
 1. git --version 2. git -v 3. rpm -qa git here rpm : redhat package management -qa : query/verify all packages
