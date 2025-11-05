@@ -1,0 +1,90 @@
+[200~Git commands:
+Yum intall git -y: inatall the git in the putty(yum = Yellowdog Updater Modifier It is used to update, install or uninstall the packages)
+ Git: this will show that is git installed or not in your linux os
+1. git --version 2. git -v 3. rpm -qa git here rpm : redhat package management -qa : query/verify all packages
+Git init: created or initialize git repository (Here init means initialise, . represents present working directory when we initialise the git, .git folder will gets created which contains some files which relates to git.)
+Git -a: this will show the .git folder after initializing the git init
+
+TRACK & COMMIT A FILE: 
+•	Create a file : touch aws 
+•	Track a file : git add aws 
+•	Git status: it will show the untracked  files. If you want to track.  git add (file)
+•	To check the status of untracked files: git status 
+TRACK & COMMIT MULTIPLE FILES
+•	To track multiple files : git add file1 file2 file3 
+•	To commit multiple files : git commit -m “commit message” file1 file2 file3
+TRACK & COMMIT ALL FILES 
+•	To track all files : git add * (regularly using)
+•	To track all files including hidden files: git add . 
+•	To commit all files : git commit -m “commit message” . Here dot (.) represents all the files which are present in staging area
+GIT LOG COMMANDS: 
+•	git log this will show the what are the commits are happened and who is the author and  history of files 
+•	 to quit the list of commit : q
+•	To see latest 2 commits : git log -2 
+•	To see all commits-ids and messages : git log --oneline 
+•	To see all full commits-ids and messages : git log --pretty=oneline
+•	Git log -–follow -–all filename: to track how many commits happened for particular file
+GIT SHOW COMMAND: 
+•	To get the commit details along with filenames : git show commit-id --name-only
+•	 To get the commit details along with the changes in filenames : git show commit-id 
+•	To get the commit details along with the changes in files & stats : git show commit-id - stat 
+GIT RM : Used to unstage the files (untrack or move back to working directory) 
+•	git rm --cached filename1 file2
+GIT IGNORE: It will be useful when you don't want to track some specific files then we use a file called .gitignore create some text files and create a directory with "jpg" files. 
+•	Vim .gitignore+add filenames in which we ignore in the vim editor: in status these ignored files wont show
+•	Note: we can ignore only on working directory(which is not git added).
+GIT CONFIG : Used to add our name and email for git history(log) 
+•	git config user.name “username” : used to add our name 
+•	git config user.email “email” : used to add email 
+GIT RESET: This command is used to delete latest commits 
+•	git reset --hard HEAD~1 : used to delete latest commit along with changes (latest ones)
+•	git reset --soft HEAD~1 : used to delete only latest commit  not data
+•	git update-ref -d HEAD: used to delete all commits at a time (only commits not data(file))
+•	Git reset --hard(commit id): this will reset the latest one and show the older version (this is versioning)
+GIT REVERT: it will remove the commit and update the reverted data in the git log
+•	Git revert commit id: to remove the required commit :wq
+ROLLBACK THE RESETTED COMMIT
+•	git reflog: user to see the previous commits which include the deleted commits and took this commit id and put it in below 
+•	git cherry-pick commit-id: this will restore the resettled commits (Git cherry-pick is a command in Git that allows you to take a specific commit from one branch and apply it to another branch. It's like picking a cherry (commit) from one branch and adding it to another branch, allowing you to selectively copy individual commits without merging the entire branch. Command: git cherry-pick commit_id)
+•	Git restore filename: to restore the deleted data/file Command: git restore filename
+GIT AMEND: This command is used to change commit details 
+•	git commit --amend --author “user ” : To change author of the latest commit 
+•	git commit --amend -m “new message” : To change message of the latest commit 
+•	git commit --amend --no-edit : this command : It is used to add the staging area files to latest commit
+GIT BRANCHES: A branch represents an independent line of development.
+•	 The git branch command lets you create, list, rename, and delete branches. 
+•	The default branch name in Git is master. 
+•	allows you to work on different features or changes to your code independently, without affecting the main or other branches. 
+•	It's a way to organize and manage your code changes, making it easier to collaborate and maintain your project 
+•	git branch: used to see the list of branches 
+•	git branch branch-name: to create a branch 
+•	git checkout branch-name :to switch one branch to another 
+•	git checkout -b branch-name :used to create and switch a branch at a time 
+•	git branch -m old-branch new-branch :used to rename a branch 
+•	git branch -d branch-name :to delete a branch (The -d option will delete the branch only if it has already been pushed and merged with the remote branch. Use -D instead if you want to force the branch to be deleted, even if it hasn't been pushed or merged yet. The branch is now deleted locally.)
+•	git branch branch-name deleted-branch-id:  Used to get deleted branch id 
+•	git branch -D: branch-name :to delete a branch forcefull
+GIT MERGE: Git merge is a command used in the Git version control system to combine changes from one branch. To merge.| note we have to do it in the master branch
+•	git merge branch_name: to merge the changes form 
+GIT STASH: Using the git stash command, developers can temporarily save changes made in the staging area. It allows them to quickly switch contexts when they are not quite ready to commit changes. And it allows them to more easily switch between branches. Generally, the stash's meaning is "store something safely in a hidden place."
+•	git stash:to delete the changes temporarily 
+•	git stash save "message": to save the stash along with the message
+•	 git stash apply: to get back the data again 
+•	git stash list: to get the list of stashes 
+•	git stash clear: to clear all stashes 
+•	git stash pop: to delete the first stash 
+•	git stash drop: used to delete the latest stash 
+•	git stash drop stash@{2}: used to delete a praticular stash
+GIT-HUB :is a web-based platform used for version control.
+•	 It simplifies the process of working with other people and makes it easy to collaborate on projects. 
+•	Team members can work on files and easily merge their changes in with the master branch of the project
+•	It will have central/remote repo
+COMMANDS: 
+•	git remote add origin repo-url: link local-repo to central-repo 
+•	git remote -v: used to get the linked repo in github b
+•	git push -u :origin branch-name :push the code from local to central 
+•	git push -u origin branch-1 branch-2 :used to push the code to multiple branches 
+•	git push -u origin --all used to push the code to all branches at a time
+•	git clone repo-url :used to get the code from central to local 
+•	git pull origin branch :used to get the chanes from central to local
+
